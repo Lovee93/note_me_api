@@ -1,7 +1,6 @@
 {
   "name": "note_me_api",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
@@ -16,5 +15,15 @@
     "knex": "^0.21.1",
     "nodemon": "^2.0.4",
     "pg": "^8.2.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lovee93/note_me_api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Lovee93/note_me_api/issues"
+  },
+  "homepage": "https://github.com/Lovee93/note_me_api#readme",
+  "description": ""
 }
