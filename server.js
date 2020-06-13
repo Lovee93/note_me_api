@@ -5,7 +5,10 @@ const knex = require('knex')
 
 const database = knex({
 	client: 'pg',
-  //Removing connection details for git commit.
+	connection: {
+    connectionString : process.env.DATABASE_URL,
+    ssl: true
+  }
 });
 
 const app = express();
@@ -50,7 +53,7 @@ app.post('/signin', (req, res) => {
 				res.status(400).json("Either email or password is wrong! Please try again.")
 			}
 		})
-		.catch(err => res.status(400).json('Wrong credentials'))
+		.catch(err => res.status(400).json('Unable to log in'))
 	}	
 })
 
