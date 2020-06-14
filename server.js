@@ -3,6 +3,14 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const knex = require('knex')
 
+const app = express();
+
+//Need to use this one for the database ssl connection to work
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+
+app.use(express.json());
+app.use(cors());
+
 const database = knex({
 	client: 'pg',
 	connection: {
@@ -10,11 +18,6 @@ const database = knex({
     ssl: true
   }
 });
-
-const app = express();
-
-app.use(express.json());
-app.use(cors());
 
 //Main App
 app.get('/', (req, res) => {
